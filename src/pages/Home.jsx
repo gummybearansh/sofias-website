@@ -28,7 +28,7 @@ const ORDER_LINK = "https://www.google.com/viewer/chooseprovider?mid=/g/11sh1ghw
 const Home = () => (
   <>
     {/* Hero - Light Theme style (Bright overlay) */}
-    <section className="relative h-screen w-full flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-[90vh] md:h-screen w-full flex items-center justify-center overflow-hidden pt-32 pb-16 md:pt-0 md:pb-0">
       <div 
         className="absolute inset-0 z-0 bg-cover bg-center animate-slow-zoom"
         style={{ backgroundImage: `url(${ASSETS.heroBg})` }}
@@ -36,21 +36,29 @@ const Home = () => (
       {/* Dark overlay with white text for contrast */}
       <div className="absolute inset-0 bg-black/40 z-0"></div>
       
-      <div className="relative z-10 text-center px-4 max-w-4xl mx-auto mt-16">
+      <div className="relative z-10 text-center px-4 max-w-4xl mx-auto mt-10 md:mt-16">
         <RevealOnScroll>
           <p className="text-white text-lg tracking-[0.3em] uppercase mb-4 font-medium">A Colorado Springs Original</p>
         </RevealOnScroll>
         <RevealOnScroll delay={200}>
-          <h1 className="text-6xl md:text-9xl font-serif font-bold text-white mb-10 drop-shadow-lg">
+          <h1 className="text-5xl sm:text-6xl md:text-9xl font-serif font-bold text-white mb-8 md:mb-10 drop-shadow-lg">
             Sofia's <br/><span className="text-red-500">Antojitos</span>
           </h1>
         </RevealOnScroll>
         <RevealOnScroll delay={400}>
-          <div className="flex flex-col md:flex-row gap-4 justify-center items-center">
-            <a href={ORDER_LINK} target="_blank" rel="noopener noreferrer" className="bg-red-700 text-white px-10 py-4 text-sm tracking-widest uppercase hover:bg-red-800 transition-all w-full md:w-auto shadow-xl">
+          <div className="flex flex-col md:flex-row gap-3 md:gap-4 justify-center items-stretch md:items-center w-full max-w-md mx-auto md:max-w-none">
+            <a
+              href={ORDER_LINK}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-red-700 text-white px-8 sm:px-10 py-4 text-xs sm:text-sm md:text-sm tracking-[0.25em] md:tracking-widest uppercase hover:bg-red-800 transition-all w-full md:w-auto shadow-xl rounded-full md:rounded-none"
+            >
               Order Online
             </a>
-            <Link to="/menu" className="bg-white text-stone-900 px-10 py-4 text-sm tracking-widest uppercase hover:bg-stone-200 transition-all w-full md:w-auto shadow-xl text-center">
+            <Link
+              to="/menu"
+              className="bg-white/90 md:bg-white text-stone-900 px-8 sm:px-10 py-4 text-xs sm:text-sm md:text-sm tracking-[0.25em] md:tracking-widest uppercase hover:bg-stone-200 transition-all w-full md:w-auto shadow-xl text-center border border-white/40 md:border-none rounded-full md:rounded-none"
+            >
               View Menu
             </Link>
           </div>
